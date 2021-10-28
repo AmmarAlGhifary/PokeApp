@@ -11,19 +11,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.PokeApp">
         <activity
-            android:name=".view.splash.SplashActivity"
-            android:configChanges="orientation|keyboardHidden|screenSize"
-            android:exported="true"
-            android:label="@string/title_activity_splash"
-            android:theme="@style/Theme.PokeApp.Fullscreen">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-        <activity
             android:name=".view.home.MainActivity"
+            android:exported="true"/>
+        <activity
+            android:name=".view.splash.SplashActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
