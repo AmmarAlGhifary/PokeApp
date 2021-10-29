@@ -5,6 +5,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.example.pokeapp.data.model.pokemondetail.CharacterResponse
 import com.example.pokeapp.data.model.pokemonlist.PokemonResponse
 import com.example.pokeapp.repository.HomeRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
