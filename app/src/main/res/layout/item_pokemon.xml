@@ -25,16 +25,16 @@
             android:src="@mipmap/ic_launcher" />
 
         <androidx.appcompat.widget.LinearLayoutCompat
-            android:layout_width="250dp"
-            android:layout_height="70dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="15dp"
             android:orientation="vertical">
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/tv_pokemon_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="15dp"
                 android:text="Bulbasaur"
                 android:textSize="15sp"
                 android:textStyle="bold" />
@@ -43,7 +43,6 @@
                 android:id="@+id/tv_number"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
                 android:text="#02"
                 android:textColor="@color/gray"
                 android:textSize="20sp" />

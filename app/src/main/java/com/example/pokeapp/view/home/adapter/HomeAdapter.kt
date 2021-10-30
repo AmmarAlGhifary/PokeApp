@@ -1,5 +1,7 @@
 package com.example.pokeapp.view.home.adapter
 
+import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -60,8 +62,9 @@ class HomeAdapter : RecyclerView.Adapter<HomeAdapter.ViewHolder>() {
                     .load(imageUrl)
                     .centerCrop()
                     .transition(DrawableTransitionOptions.withCrossFade())
-                    .placeholder(R.drawable.ic_launcher_background)
                     .error(R.drawable.ic_error)
+                    .placeholder(R.drawable.ic_launcher_background)
+                    .fallback(ColorDrawable(Color.GRAY))
                     .into(ivPokemon)
                 tvPokemonName.text = poke.name
                 tvNumber.text = poke.name

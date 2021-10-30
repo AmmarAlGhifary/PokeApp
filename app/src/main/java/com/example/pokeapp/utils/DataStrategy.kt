@@ -1,11 +1,11 @@
 package com.example.pokeapp.utils
 
-import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.liveData
 import androidx.lifecycle.map
 import kotlinx.coroutines.Dispatchers
+import timber.log.Timber
 
 fun <T, A> performGetOperation(
     databaseQuery: () -> LiveData<T>,
@@ -38,11 +38,11 @@ fun <A> performGetRemoteOnly(
 
         val source = result.map { Resource.success(it) }
         emitSource(source)
-        Log.d("source", "performGetRemoteOnly: " + source)
+        Timber.d("performGetRemoteOnly: %s", source)
         val responseStatus = networkCall.invoke()
         if (responseStatus.status == Resource.Status.SUCCESS) {
             _result.postValue(responseStatus.data!!)
-            Log.d("lol hayu", "performGetOperation: " + responseStatus)
+            Timber.d("performGetOperation: %s", responseStatus)
 
         } else if (responseStatus.status == Resource.Status.ERROR) {
             emit(Resource.error(responseStatus.message!!))
@@ -57,5 +57,5 @@ fun <A> performGetLocalOnly(
         emit(Resource.loading())
         val source = databaseQuery.invoke().map { Resource.success(it) }
         emitSource(source)
-        Log.d("localsource", "performGetLocalOnly: " + source)
+        Timber.d("performGetLocalOnly: %s", source)
     }

@@ -1,6 +1,6 @@
 package com.example.pokeapp.di
 
-import com.example.pokeapp.data.model.pokemonlist.list.CharacterDetailList
+import com.example.pokeapp.data.model.pokemondetail.CharacterResponse
 import com.example.pokeapp.data.model.pokemonlist.list.PokemonResponse
 import retrofit2.Response
 import retrofit2.http.GET
@@ -12,5 +12,5 @@ interface ApiService {
     suspend fun getPokemonList() : Response<PokemonResponse>
 
     @GET("pokemon/{name}")
-    suspend fun getPokemon(@Path("name") id : String) : Response<CharacterDetailList>
+    suspend fun getPokemon(@Path("name") id: Int) : Response<CharacterResponse>
 }

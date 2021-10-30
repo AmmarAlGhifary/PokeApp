@@ -1,10 +1,16 @@
 package com.example.pokeapp.di
 
+import android.content.Context
 import com.example.pokeapp.BuildConfig.BASE_URL
 import com.example.pokeapp.BuildConfig.DEBUG
+import com.example.pokeapp.data.local.AppDatabase
+import com.example.pokeapp.data.local.PokemonDao
+import com.example.pokeapp.data.remote.PokemonRemoteDataSource
+import com.example.pokeapp.repository.HomeRepository
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
+import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
@@ -44,4 +50,13 @@ object ApiModule {
         }
         return builder.build()
     }
+
+    @Singleton
+    @Provides
+    fun provideDatabase(@ApplicationContext appContext: Context) = AppDatabase.getDatabase(appContext)
+
+    @Singleton
+    @Provides
+    fun provideCharacterDao(db: AppDatabase) = db.characterDao()
+
 }
