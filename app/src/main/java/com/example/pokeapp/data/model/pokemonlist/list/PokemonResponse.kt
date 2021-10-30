@@ -1,5 +1,5 @@
 package com.example.pokeapp.data.model.pokemonlist.list
 
-data class CharacterList(
+data class PokemonResponse(
     val results: List<Character>
 )

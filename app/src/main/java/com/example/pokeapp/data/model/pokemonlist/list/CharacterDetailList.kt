@@ -1,6 +1,4 @@
-package com.example.satriakurniawan.data.entities
-
-import com.example.pokeapp.data.model.pokemonlist.list.CharacterDetail
+package com.example.pokeapp.data.model.pokemonlist.list
 
 data class CharacterDetailList(
     val stats: List<CharacterDetail>,

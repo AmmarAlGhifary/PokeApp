@@ -18,5 +18,11 @@
         android:id="@+id/detailFragment"
         android:name="com.example.pokeapp.view.detail.DetailFragment"
         android:label="fragment_detail"
-        tools:layout="@layout/fragment_detail" />
+        tools:layout="@layout/fragment_detail" >
+
+        <argument
+            android:name="poke"
+            app:argType="com.example.pokeapp.data.model.pokemonlist.list.Character"/>
+
+    </fragment>
 </navigation>
