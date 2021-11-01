@@ -16,9 +16,9 @@
     </fragment>
     <fragment
         android:id="@+id/detailFragment"
-        android:name="com.example.pokeapp.view.detail.DetailFragment"
+        android:name="com.example.pokeapp.view.detail.StatsFragment"
         android:label="fragment_detail"
-        tools:layout="@layout/fragment_detail" >
+        tools:layout="@layout/fragment_stats" >
 
         <argument
             android:name="poke"

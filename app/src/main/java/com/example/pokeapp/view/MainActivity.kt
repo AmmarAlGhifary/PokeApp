@@ -1,4 +1,4 @@
-package com.example.pokeapp.view.home
+package com.example.pokeapp.view
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

@@ -9,7 +9,7 @@ import android.view.animation.AnimationUtils
 import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
 import com.example.pokeapp.R
-import com.example.pokeapp.view.home.MainActivity
+import com.example.pokeapp.view.MainActivity
 
 
 @SuppressLint("CustomSplashScreen")

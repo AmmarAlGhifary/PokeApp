@@ -41,13 +41,7 @@ class HomeAdapter : RecyclerView.Adapter<HomeAdapter.ViewHolder>() {
         ViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.item_pokemon, parent, false))
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val poke = dataPoke[position]
-
         holder.bind(dataPoke[position])
-        holder.itemView.setOnClickListener { mViews ->
-            val direction = HomeFragmentDirections.actionHomeFragmentToDetailFragment(poke)
-            mViews.findNavController().navigate(direction)
-        }
     }
 
     override fun getItemCount(): Int = dataPoke.size
