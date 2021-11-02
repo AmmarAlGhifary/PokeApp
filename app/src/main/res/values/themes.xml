@@ -1,6 +1,6 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Theme.PokeApp" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+    <style name="Theme.PokeApp" parent="Theme.MaterialComponents.DayNight">
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/purple_500</item>
         <item name="colorPrimaryVariant">@color/purple_700</item>
@@ -23,5 +23,19 @@
 
     <style name="Theme.PokeApp.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
+    <style name="TextView" parent="Theme.PokeApp">
+        <item name="android:textSize">18dp</item>
+        <item name="fontFamily">@font/proxima_nova_regular</item>
+    </style>
+
+    <style name="ItemTypeTextView" parent="TextView">
+        <item name="android:textSize">@dimen/list_type_font_size</item>
+        <item name="android:background">@drawable/top_radius_background</item>
+        <item name="android:paddingStart">8dp</item>
+        <item name="android:paddingEnd">8dp</item>
+        <item name="android:paddingTop">4dp</item>
+        <item name="android:paddingBottom">4dp</item>
+        <item name="android:alpha">0.75</item>
+    </style>
 
 </resources>

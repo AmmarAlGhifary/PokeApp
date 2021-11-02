@@ -4,9 +4,9 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
-import com.example.pokeapp.data.model.pokemonlist.list.Character
+import com.example.pokeapp.data.model.Pokemon
 
-@Database(entities = [Character::class], version = 1, exportSchema = false)
+@Database(entities = [Pokemon::class], version = 1, exportSchema = false)
 abstract class AppDatabase : RoomDatabase() {
 
     abstract fun characterDao(): PokemonDao

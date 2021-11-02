@@ -22,6 +22,7 @@ class EvolutionFragment : Fragment(R.layout.fragment_evolution) {
     private val binding get() = _binding!!
     private val viewModel : HomeViewModel by viewModels()
 
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -37,6 +38,5 @@ class EvolutionFragment : Fragment(R.layout.fragment_evolution) {
     }
 
     private fun initViews() {
-        TODO("Not yet implemented")
     }
 }
