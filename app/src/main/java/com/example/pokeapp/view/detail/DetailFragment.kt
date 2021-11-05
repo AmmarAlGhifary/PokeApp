@@ -12,7 +12,7 @@ import androidx.navigation.fragment.navArgs
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions
 import com.example.pokeapp.R
-import com.example.pokeapp.data.model.Pokemon
+import com.example.pokeapp.data.model.home.Pokemon
 import com.example.pokeapp.databinding.FragmentDetailBinding
 import com.example.pokeapp.view.adapter.PagerSectionAdapter
 import com.google.android.material.tabs.TabLayoutMediator

@@ -2,8 +2,8 @@
     <!-- Base application theme. -->
     <style name="Theme.PokeApp" parent="Theme.MaterialComponents.DayNight">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/purple_500</item>
-        <item name="colorPrimaryVariant">@color/purple_700</item>
+        <item name="colorPrimary">@color/purple_700</item>
+        <item name="colorPrimaryVariant">@color/purple_500</item>
         <item name="colorOnPrimary">@color/white</item>
         <!-- Secondary brand color. -->
         <item name="colorSecondary">@color/teal_200</item>
@@ -26,6 +26,15 @@
     <style name="TextView" parent="Theme.PokeApp">
         <item name="android:textSize">18dp</item>
         <item name="fontFamily">@font/proxima_nova_regular</item>
+    </style>
+
+
+    <style name="TabStyle" parent="Theme.MaterialComponents">
+        <item name="android:background">@color/gray</item>
+        <item name="tabIconTint">@color/mtrl_tabs_icon_color_selector_colored</item>
+        <item name="tabIndicatorColor">?attr/colorOnPrimary</item>
+        <item name="tabTextColor">@color/mtrl_tabs_icon_color_selector_colored</item>
+        <item name="tabRippleColor">@color/mtrl_tabs_colored_ripple_color</item>
     </style>
 
     <style name="ItemTypeTextView" parent="TextView">

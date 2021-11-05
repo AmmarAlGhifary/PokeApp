@@ -1,4 +1,4 @@
-package com.example.pokeapp.data.model
+package com.example.pokeapp.data.model.home
 
 import androidx.versionedparcelable.VersionedParcelize
 import java.io.Serializable

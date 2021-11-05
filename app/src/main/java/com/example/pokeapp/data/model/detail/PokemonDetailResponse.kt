@@ -1,53 +1,26 @@
 package com.example.pokeapp.data.model.detail
 
+import androidx.versionedparcelable.VersionedParcelize
+import java.io.Serializable
 
+@VersionedParcelize
 data class PokemonDetailResponse(
     val abilities: List<Ability>,
+    val baseExperience: Int,
+    val forms: List<Form>,
+    val gameIndices: List<GameIndice>,
     val height: Int,
+    val heldItems: List<Any>,
     val id: Int,
+    val isDefault: Boolean,
+    val locationAreaEncounters: String,
+    val moves: List<Move>,
     val name: String,
+    val order: Int,
+    val pastTypes: List<Any>,
+    val species: Species,
     val sprites: Sprites,
     val stats: List<Stat>,
     val types: List<Type>,
     val weight: Int
-) {
-    data class Ability(
-        val ability: Ability,
-    ) {
-        data class Ability(
-            val name: String,
-            val url: String
-        )
-    }
-
-    data class Sprites(
-        val frontDefault: String?,
-        val other: Other
-    ) {
-        data class Other(
-            val officialArtwork: OfficialArtwork
-        ) {
-            data class OfficialArtwork(
-                val frontDefault: String?
-            )
-        }
-    }
-
-    data class Stat(
-        val baseStat: Int,
-        val effort: Int,
-        val stat: Stat
-    ) {
-        data class Stat(
-            val name: String
-        )
-    }
-
-    data class Type(
-        val type: Type
-    ) {
-        data class Type(
-            val name: String
-        )
-    }
-}
+) : Serializable

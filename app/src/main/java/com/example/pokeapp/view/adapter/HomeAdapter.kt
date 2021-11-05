@@ -12,7 +12,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions
 import com.example.pokeapp.R
-import com.example.pokeapp.data.model.Pokemon
+import com.example.pokeapp.data.model.home.Pokemon
 import com.example.pokeapp.databinding.ItemPokemonBinding
 import com.example.pokeapp.view.home.HomeFragmentDirections
 
@@ -21,7 +21,7 @@ class HomeAdapter : RecyclerView.Adapter<HomeAdapter.ViewHolder>() {
 
     private val callback = object : DiffUtil.ItemCallback<Pokemon>() {
         override fun areItemsTheSame(oldItem: Pokemon, newItem: Pokemon): Boolean {
-            return oldItem.id == newItem.id
+            return oldItem.url == newItem.url
         }
 
         override fun areContentsTheSame(oldItem: Pokemon, newItem: Pokemon): Boolean {
@@ -29,7 +29,6 @@ class HomeAdapter : RecyclerView.Adapter<HomeAdapter.ViewHolder>() {
         }
 
     }
-
 
     var onItemClick : ((Pokemon) -> Unit)? = null
 

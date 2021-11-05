@@ -9,6 +9,7 @@
     <color name="gray">#CE676767</color>
     <color name="white">#FFFFFFFF</color>
     <color name="transparent">#00000000</color>
+    <color name="flying">#90B1C5</color>
 
 
     <!-- Pokemon types -->
@@ -17,7 +18,7 @@
     <color name="type_fighting">#BE322E</color>
     <color name="type_water">#6A92ED</color>
     <color name="type_flying">#A893EE</color>
-    <color name="type_grass">#7BC757</color>
+    <color name="type_grass">#007C42</color>
     <color name="type_poison">#9F449F</color>
     <color name="type_electric">#F7CF43</color>
     <color name="type_ground">#DFBF6E</color>

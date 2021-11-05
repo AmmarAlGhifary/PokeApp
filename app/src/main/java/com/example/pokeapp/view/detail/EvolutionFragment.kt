@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.navArgs
 import com.example.pokeapp.R
 import com.example.pokeapp.data.viewmodel.HomeViewModel
 import com.example.pokeapp.databinding.FragmentEvolutionBinding
@@ -20,7 +21,8 @@ class EvolutionFragment : Fragment(R.layout.fragment_evolution) {
     @FragmentScoped
     private var _binding : FragmentEvolutionBinding? = null
     private val binding get() = _binding!!
-    private val viewModel : HomeViewModel by viewModels()
+
+
 
 
     override fun onCreateView(
@@ -38,5 +40,8 @@ class EvolutionFragment : Fragment(R.layout.fragment_evolution) {
     }
 
     private fun initViews() {
+        binding.apply {
+
+        }
     }
 }

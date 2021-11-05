@@ -11,14 +11,15 @@
         android:id="@+id/tab_layout"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
-        android:theme="@style/Widget.MaterialComponents.TabLayout.Colored"
-        app:tabTextColor="@color/black"
+        android:theme="@style/TabStyle"
+        app:tabTextColor="@color/white"
         tools:ignore="SpeakableTextPresentCheck" />
 
     <androidx.viewpager2.widget.ViewPager2
         android:id="@+id/vp_detail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
+
 
 
 </androidx.appcompat.widget.LinearLayoutCompat>

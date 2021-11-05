@@ -1,4 +1,4 @@
-package com.example.pokeapp.data.model
+package com.example.pokeapp.data.model.home
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
