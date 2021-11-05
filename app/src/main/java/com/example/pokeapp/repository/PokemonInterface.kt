@@ -1,12 +1,11 @@
-package com.example.pokeapp.di
+package com.example.pokeapp.repository
 
 import com.example.pokeapp.data.model.home.Pokemon
 import retrofit2.Call
 import retrofit2.http.GET
 
-interface ApiService {
+interface PokemonInterface {
 
     @GET("pokemon.json")
-    suspend fun getPokemonList() : Call<List<Pokemon>>
-
+    fun get() : Call<List<Pokemon>>
 }

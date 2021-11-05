@@ -3,8 +3,8 @@ package com.example.pokeapp.view.adapter
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 import androidx.viewpager2.adapter.FragmentStateAdapter
-import com.example.pokeapp.view.detail.EvolutionFragment
-import com.example.pokeapp.view.detail.StatsFragment
+import com.example.pokeapp.view.evolution.EvolutionFragment
+import com.example.pokeapp.view.stat.StatsFragment
 
 class PagerSectionAdapter(activity: FragmentActivity) : FragmentStateAdapter(activity) {
 

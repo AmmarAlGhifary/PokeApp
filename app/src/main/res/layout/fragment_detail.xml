@@ -6,7 +6,7 @@
     android:layout_height="wrap_content"
     android:fitsSystemWindows="true"
     android:orientation="vertical"
-    tools:context=".view.detail.DetailFragment">
+    tools:context=".view.dashboard.DashboardFragment">
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="match_parent"

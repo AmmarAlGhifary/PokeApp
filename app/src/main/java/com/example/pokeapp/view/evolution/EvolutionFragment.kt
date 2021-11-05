@@ -1,29 +1,18 @@
-package com.example.pokeapp.view.detail
+package com.example.pokeapp.view.evolution
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.viewModels
-import androidx.navigation.fragment.navArgs
 import com.example.pokeapp.R
-import com.example.pokeapp.data.viewmodel.HomeViewModel
 import com.example.pokeapp.databinding.FragmentEvolutionBinding
-import com.example.pokeapp.databinding.FragmentHomeBinding
-import dagger.hilt.android.AndroidEntryPoint
-import dagger.hilt.android.scopes.FragmentScoped
 
-@FragmentScoped
-@AndroidEntryPoint
+
 class EvolutionFragment : Fragment(R.layout.fragment_evolution) {
 
-    @FragmentScoped
     private var _binding : FragmentEvolutionBinding? = null
     private val binding get() = _binding!!
-
-
-
 
     override fun onCreateView(
         inflater: LayoutInflater,
