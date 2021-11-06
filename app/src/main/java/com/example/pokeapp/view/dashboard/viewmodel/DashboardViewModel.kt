@@ -15,4 +15,8 @@ class DashboardViewModel(private val pokemonDAO: PokemonDao) : ViewModel() {
     fun getEvolutionByIds(ids: List<String>): LiveData<List<Pokemon>> {
         return pokemonDAO.getEvolutionsByIds(ids)
     }
+
+    fun getWeaknessByIds(weaknessId : List<String>) : LiveData<List<Pokemon>> {
+        return pokemonDAO.getWeaknessByIds(weaknessId)
+    }
 }

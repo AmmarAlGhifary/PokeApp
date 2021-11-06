@@ -1,6 +1,5 @@
 package com.example.pokeapp.view.evolution.adapter
 
-import android.content.Context
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.view.LayoutInflater
@@ -14,9 +13,7 @@ import com.example.pokeapp.R
 import com.example.pokeapp.data.model.home.Pokemon
 import com.example.pokeapp.databinding.ItemPokemonBinding
 
-class EvolutionAdapter(
-    private val context: Context
-) : RecyclerView.Adapter<EvolutionAdapter.ViewHolder>() {
+class EvolutionAdapter : RecyclerView.Adapter<EvolutionAdapter.ViewHolder>() {
 
     private val list = arrayListOf<Pokemon>()
 

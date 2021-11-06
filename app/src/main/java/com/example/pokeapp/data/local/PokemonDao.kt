@@ -16,6 +16,9 @@ interface PokemonDao {
     @Query("SELECT * FROM pokemon WHERE id IN(:evolutionIds)")
     fun getEvolutionsByIds(evolutionIds: List<String>): LiveData<List<Pokemon>>
 
+    @Query("SELECT * FROM pokemon WHERE id IN(:weaknessIds)")
+    fun getWeaknessByIds(weaknessIds: List<String>): LiveData<List<Pokemon>>
+
     @Query("SELECT * FROM pokemon")
     fun all(): LiveData<List<Pokemon>>
 

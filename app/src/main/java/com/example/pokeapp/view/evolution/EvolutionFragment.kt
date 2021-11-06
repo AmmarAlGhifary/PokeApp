@@ -47,7 +47,7 @@ class EvolutionFragment : Fragment(R.layout.fragment_evolution) {
         val rv = binding.rvEvolution
         val layoutManager = LinearLayoutManager(requireContext())
         rv.layoutManager = layoutManager
-        val adapter = EvolutionAdapter(view.context)
+        val adapter = EvolutionAdapter()
         rv.adapter = adapter
         viewModel.getPokemonById(id).observe(viewLifecycleOwner, { value ->
                 value.let { pokemon ->
