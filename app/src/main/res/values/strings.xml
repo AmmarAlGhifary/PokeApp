@@ -19,6 +19,10 @@
     <string name="atk">ATK</string>
     <string name="def">DEF</string>
     <string name="spd">SPD</string>
-    <string name="exp">EXP</string>
+    <string name="spAtk">SPATK</string>
+    <string name="spDEF">SPDEF</string>
+
+
+    <string name="long_text">lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum \nlorem ipsum lorem ipsum lorem ipsum lorem ipsum \nlorem ipsum lorem ipsum lorem ipsum </string>
 
 </resources>

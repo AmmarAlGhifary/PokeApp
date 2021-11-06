@@ -33,5 +33,6 @@
     <color name="type_steel">#B8B9CF</color>
     <color name="type_fairy">#ED9AAD</color>
     <color name="type_unknown">#5D9685</color>
+    <color name="backgroundLight">#F5F5F5</color>
 
 </resources>

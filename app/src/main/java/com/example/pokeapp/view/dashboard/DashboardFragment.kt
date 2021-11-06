@@ -1,28 +1,30 @@
 package com.example.pokeapp.view.dashboard
 
+import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.annotation.StringRes
+import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
-import androidx.navigation.fragment.navArgs
+import com.bumptech.glide.Glide
+import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions
 import com.example.pokeapp.R
-import com.example.pokeapp.data.model.home.Pokemon
-import com.example.pokeapp.view.home.HomeViewModel
-import com.example.pokeapp.databinding.FragmentDetailBinding
-import com.example.pokeapp.view.adapter.PagerSectionAdapter
+import com.example.pokeapp.databinding.FragmentDashboardBinding
+import com.example.pokeapp.utils.ImageLoadingListener
+import com.example.pokeapp.view.dashboard.adapter.ViewPagerAdapter
+import com.example.pokeapp.view.dashboard.viewmodel.DashboardViewModel
 import com.google.android.material.tabs.TabLayoutMediator
-import dagger.hilt.android.AndroidEntryPoint
-import dagger.hilt.android.scopes.FragmentScoped
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
-class DashboardFragment : Fragment(R.layout.fragment_detail) {
+class DashboardFragment : Fragment(R.layout.fragment_dashboard) {
 
-    private var _binding: FragmentDetailBinding? = null
+    private var _binding: FragmentDashboardBinding? = null
     private val binding get() = _binding!!
-    private lateinit var pokemon: Pokemon
-    private val viewModel: HomeViewModel by viewModels()
+    private val viewModel: DashboardViewModel by viewModel()
 
     companion object {
         @StringRes
@@ -32,36 +34,72 @@ class DashboardFragment : Fragment(R.layout.fragment_detail) {
         )
     }
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        _binding = FragmentDetailBinding.inflate(inflater, container, false)
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+        _binding = FragmentDashboardBinding.inflate(inflater, container, false)
+        postponeEnterTransition()
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        val id = checkNotNull(arguments?.getString("id"))
+        val name = checkNotNull(arguments?.getString("name"))
+
+        _binding = FragmentDashboardBinding.bind(view)
         binding.toolbarLayout.isTitleEnabled
         binding.toolbarHome.setNavigationOnClickListener {
             requireActivity().onBackPressed()
         }
-        initPager()
-        populateUI()
+
+        binding.ivPokemonDetail.transitionName = name
+
+        viewModel.getPokemonById(id).observe(viewLifecycleOwner, { pokemonValue ->
+            pokemonValue?.let { pokemon ->
+                binding.tvPokemonNameDetail.text = pokemon.name
+                binding.tvAboutPokemon.text = pokemon.xdescription
+
+
+                pokemon.typeofpokemon?.getOrNull(0).let { firstType ->
+                    binding.tvTypeDetail1.text = firstType
+                    binding.tvTypeDetail1.isVisible = firstType != null
+                }
+
+                pokemon.typeofpokemon?.getOrNull(1).let { secondType ->
+                    binding.tvTypeDetail2.text = secondType
+                    binding.tvTypeDetail2.isVisible = secondType != null
+                }
+
+                binding.ivPokemonDetail.let {
+                    Glide.with(view.context)
+                        .load(pokemon.imageurl)
+                        .centerCrop()
+                        .transition(DrawableTransitionOptions.withCrossFade())
+                        .error(R.drawable.ic_error)
+                        .placeholder(R.drawable.ic_launcher_background)
+                        .fallback(ColorDrawable(Color.GRAY))
+                        .listener(ImageLoadingListener {
+                            startPostponedEnterTransition()
+                        })
+                        .into(it)
+                }
+
+                val pager = binding.viewPager
+                val tabs = binding.tabLayout
+                pager.adapter =
+                    ViewPagerAdapter(childFragmentManager, requireContext(), pokemon.id)
+                tabs.setupWithViewPager(pager)
+            }
+        })
     }
 
-    private fun initPager() {
-        val pagerAdapter = activity?.let { PagerSectionAdapter(it) }
-        binding.holderPager.vpDetail.adapter = pagerAdapter
-        TabLayoutMediator(
-            binding.holderPager.tabLayout,
-            binding.holderPager.vpDetail
-        ) { tab, position ->
-            tab.text = resources.getString(TAB_TITLES[position])
-        }.attach()
+    override fun onDestroyView() {
+        _binding = null
+        super.onDestroyView()
     }
 
-    private fun populateUI() {
+}
+
+
 //        var url = pokemon.url.substringAfter("pokemon/")
 //        val imageUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/" + url.substringBefore("/") + ".png"
 //        binding.apply {
@@ -75,6 +113,15 @@ class DashboardFragment : Fragment(R.layout.fragment_detail) {
 //                .fallback(ColorDrawable(Color.GRAY))
 //                .into(ivPokemonDetail)
 //        }
-    }
 
-}
+
+//private fun initPager() {
+//    val pagerAdapter = activity?.let { PagerSectionAdapter(it) }
+//    binding.holderPager.vpDetail.adapter = pagerAdapter
+//    TabLayoutMediator(
+//        binding.holderPager.tabLayout,
+//        binding.holderPager.vpDetail
+//    ) { tab, position ->
+//        tab.text = resources.getString(DashboardFragment.TAB_TITLES[position])
+//    }.attach()
+//}

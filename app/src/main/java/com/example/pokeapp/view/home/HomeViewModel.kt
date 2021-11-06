@@ -21,7 +21,7 @@ class HomeViewModel constructor(
         getPokemonService()
     }
 
-    fun getListPokemon() = pokemonDao.all()
+    fun getListPokemon() = pokemonDao.getAllCharacters()
 
      private fun getPokemonService() = viewModelScope.launch {
         val call = pokemonService.get()
